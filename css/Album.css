@@ -1,0 +1,85 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	background: url(../img/bg.jpg);
+}
+#singerbar img{
+	width:150px;
+	height:150px;
+	padding: 5px;
+}
+span{
+	background-color: antiquewhite;
+	display: block;
+	width: 160px;
+	height: 180px;
+	margin: 5px;
+	box-shadow:0px 0px 50px #FAEBD7;	
+}
+#singerbar1{
+	position: absolute;
+	height: 800px;
+	left:20px;
+	top: 20px;
+	text-align: center;
+}
+#singerbar2{
+	position: absolute;
+	height: 800px;
+	right:20px;
+	top: 20px;
+	text-align: center;
+}
+#Albums{
+	position: absolute;
+	top: 160px;
+	left: 50%;
+	margin-left:-230px;
+	z-index:10;
+}
+#Albums span{
+	display: block;
+	position: absolute;
+	box-shadow: 0px 0px 0px #FAEBD7;
+}#Albums img{
+	width: 450px;
+	height: 450px;
+	position: absolute;
+}
+#cover{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+}
+#left{
+	position: absolute;
+	width: 50px;
+	height: 80px;
+	background: rgba(0,0,0,0.2);
+	border-radius: 10px;
+	top: 320px;
+	left: 20%;
+	z-index: 30;
+}
+#right{
+	position: absolute;
+	width: 50px;
+	height: 80px;
+	background: rgba(0,0,0,0.2);
+	border-radius: 10px;
+	top: 320px;
+	right: 20%;
+	z-index: 30;
+}
+#singerbox p{
+	font-size: 60px;
+	color: #FFFFFF;
+	margin-top: 12px;
+	font-family: "微软雅黑";
+	text-align: center;
+	font-weight: bold;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>专辑展示网页</title>
+		<link rel="stylesheet" type="text/css" href="css/Album.css"/>
+	</head>
+	<body>
+		<div id="singerbar">	
+			<div id="singerbar1">
+		    <span><img src="img/Singer/0.JPG"/><p>TaylorSwift</p></span>
+		    <span><img src="img/Singer/1.JPG"/><p>JustinBieber</p></span>
+		    <span><img src="img/Singer/2.JPG"/><p>LadyGaga</p></span>
+		    <span><img src="img/Singer/3.JPG"/><p>JohnLegend</p></span>
+			</div>
+			<div id="singerbar2">
+		    <span><img src="img/Singer/4.JPG"/><p>EdSheeran</p></span>
+		    <span><img src="img/Singer/5.JPG"/><p>CalvinHarris</p></span>
+		    <span><img src="img/Singer/6.JPG"/><p>Adele</p></span>
+		    <span><img src="img/Singer/7.JPG"/><p>OtherArtist</p></span>
+			</div>
+		</div>
+		<div id="cover">	</div>
+		<div id="singerbox">
+			<div id="Albums">
+				<span><img src="img/AlbumPic1/0/0.JPG" title="1"/></span>
+			    <span><img src="img/AlbumPic1/0/1.JPG" title="2"/></span>
+			    <span><img src="img/AlbumPic1/0/2.JPG" title="3"/></span>
+			    <span><img src="img/AlbumPic1/0/3.JPG" title="4"/></span>
+			    <span><img src="img/AlbumPic1/0/4.JPG" title="5"/></span>
+			</div>
+			<span id="left"><p><</p></span>
+			<span id="right"><p>></p></span>
+		</div>
+	</body>
+	<script src="js/jquery-1.11.3.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$("#singerbar1 span").click(function(){
+			var $img=$("#Albums img");
+			var index=$(this).index();
+			for (var i=0;i<5;i++) {
+				var url="img/AlbumPic1/"+index+"/"+i+".JPG";
+				console.log(url);
+				$img.eq(i).attr("src",url);
+			}
+			$("#singerbox").fadeIn(600);
+		});
+		$("#singerbar2 span").click(function(){
+			var $img=$("#Albums img");
+			var index=$(this).index();
+			for (var i=0;i<5;i++) {
+				var url="img/AlbumPic2/"+index+"/"+i+".JPG";
+				console.log("picture"+url);
+				$img.eq(i).attr("src",url);
+			}
+			$("#singerbox").fadeIn(600);
+		});
+		$("#cover").click(function(){
+			$("#cover").fadeOut(600);
+		});
+		$("#right").click(function(){
+			$("#Albums span:last-child").animate({"left":"350px"},500,
+			function(){
+				$(this).animate({"left":"0px"},500);
+				$("#Albums").prepend(this);
+			});
+		});
+		$("#left").click(function(){
+			$("#Albums span:first-child").animate({"left":"-350px"},500,
+			function(){
+				$(this).animate({"left":"0px"},500);
+				$("#Albums").append(this);
+			});
+		});
+	</script>
+</html>
